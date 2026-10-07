@@ -30,13 +30,15 @@ SECRET_KEY = os.environ.get(
 if not DEBUG and (not SECRET_KEY or SECRET_KEY == 'django-insecure-local-development-only-key'):
     raise ImproperlyConfigured('Set DJANGO_SECRET_KEY in the production environment.')
 
+default_hosts = 'localhost,127.0.0.1,.pythonanywhere.com'
 ALLOWED_HOSTS = [
     host.strip()
-    for host in os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+    for host in os.environ.get('DJANGO_ALLOWED_HOSTS', default_hosts).split(',')
     if host.strip()
 ]
 
-
+if 'pythonanywhere.com' not in ALLOWED_HOSTS and '.pythonanywhere.com' not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append('.pythonanywhere.com')
 # Application definition
 
 INSTALLED_APPS = [
@@ -124,7 +126,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
