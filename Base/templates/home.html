@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Deep Roy - Junior Software Developer (Python & Django)." />
+  <title>Deep Roy | Python & Django Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></g></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 5.5C5 4.5 8 4.5 12 6.5c4-2 7-2 9-1V19c-2-1-5-1-9 1-4-2-7-2-9-1z M12 6.5V20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.5 0 4 2 4 5"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5zM6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M5 6h14v9H5zM2 19h20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4M6 5h11l-2 4 2 4H6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></g></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19zM14 7l3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 3c3 2 5 5 5 9l-2 3H9l-2-3c0-4 2-7 5-9zM9 15l-3 1 1 3 3-2M15 15l3 1-1 3-3-2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16M6 16l4-4 3 3 6-7M15 8h4v4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l2 5-2 1.5a11 11 0 0 0 5.5 5.5L16 13l5 2v3a3 3 0 0 1-3 3A15 15 0 0 1 3 6a3 3 0 0 1 3-3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></g></symbol>
+    <symbol id="i-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.600.5.5 5.600.5 12c0 5.100 3.300 9.400 7.900 10.900.6.100.8-.3.800-.6v-2c-3.200.7-3.900-1.5-3.900-1.5-.5-1.300-1.300-1.700-1.300-1.700-1-.7.100-.7.100-.7 1.200.1 1.800 1.200 1.800 1.200 1 1.800 2.700 1.300 3.300 1 .1-.7.400-1.300.7-1.600-2.600-.3-5.300-1.300-5.300-5.700 0-1.300.5-2.300 1.200-3.100-.1-.3-.5-1.5.1-3.100 0 0 1-.3 3.200 1.200a11 11 0 0 1 5.8 0c2.200-1.5 3.200-1.200 3.200-1.200.6 1.600.2 2.800.1 3.100.8.800 1.200 1.800 1.200 3.100 0 4.400-2.700 5.400-5.300 5.700.4.400.8 1.100.8 2.200v3.200c0 .3.200.7.800.6A11.5 11.5 0 0 0 23.5 12C23.5 5.600 18.400.5 12 .5z"/></symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <a href="#home" class="logo">D<span>R</span>.</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="nav">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#work">Work</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="nav-cta">Let's Talk</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <p class="hi">Hi, I'm <i></i></p>
+    <h1>Deep <em>Roy</em></h1>
+    <p class="role">Junior Software Developer &amp; Python / Django Backend</p>
+    <p class="lead">
+      I build web apps that work from the database to the screen. I've shipped three
+      full-stack projects, including a machine learning model with about 90% test
+      accuracy running inside a live Django site.
+    </p>
+    <div class="actions">
+      <a href="#work" class="btn btn-main">View My Work <span>&rarr;</span></a>
+      <a href="{% static 'resume/Deep_Roy_Resume.pdf' %}" class="btn btn-ghost" download>Download CV <span>&#8595;</span></a>
+    </div>
+  </div>
+
+  <div class="hero-art">
+    <!-- lamp -->
+    <svg class="lamp" viewBox="0 0 80 110" aria-hidden="true">
+      <path d="M40 0v38" stroke="#1b1b1b" stroke-width="2"/>
+      <path d="M8 66a32 32 0 0 1 64 0z" fill="#fff" stroke="#1b1b1b" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M33 74h14M36 82h8" stroke="#f26b1d" stroke-width="3" stroke-linecap="round"/>
+      <path d="M40 92v6M30 88l-3 4M50 88l3 4" stroke="#f26b1d" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <!-- shelf -->
+    <svg class="shelf" viewBox="0 0 150 90" aria-hidden="true">
+      <rect x="14" y="14" width="9" height="40" rx="1" fill="#fff" stroke="#1b1b1b" stroke-width="2"/>
+      <rect x="25" y="8" width="9" height="46" rx="1" fill="#fff" stroke="#1b1b1b" stroke-width="2"/>
+      <rect x="36" y="16" width="10" height="38" rx="1" fill="#f26b1d" stroke="#1b1b1b" stroke-width="2"/>
+      <path d="M100 54h30l-3 18h-24z" fill="#f26b1d" stroke="#1b1b1b" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M115 54C115 40 112 30 104 24M115 54c0-14 4-24 12-30M115 54c0-8 0-16 0-26" fill="none" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round"/>
+      <path d="M104 24c-8 0-10 8-8 12 6 0 10-4 8-12zM127 24c8 0 9 8 7 12-6 0-9-4-7-12z" fill="#fff" stroke="#1b1b1b" stroke-width="2"/>
+      <path d="M0 76h150" stroke="#1b1b1b" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+
+    <div class="photo-wrap">
+      <div class="photo-blob"></div>
+      <div class="photo"><img src="{% static 'image/myphoto.jpeg' %}" alt="Deep Roy" /></div>
+    </div>
+    <div class="ground"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-art" aria-hidden="true">
+    <svg viewBox="0 0 330 230">
+      <path d="M20 10h80a14 14 0 0 1 14 14v100H20z" fill="#fff" stroke="#1b1b1b" stroke-width="2.5"/>
+      <path d="M67 10v114M20 66h94" stroke="#1b1b1b" stroke-width="2"/>
+      <path d="M32 50c0-9 8-12 14-10 3-7 14-6 15 2 7 0 9 8 3 10H34c-5 0-5-2-2-2z" fill="#fff" stroke="#1b1b1b" stroke-width="2"/>
+      <rect x="205" y="168" width="100" height="14" rx="2" fill="#fff" stroke="#1b1b1b" stroke-width="2.5"/>
+      <rect x="212" y="182" width="90" height="14" rx="2" fill="#f26b1d" stroke="#1b1b1b" stroke-width="2.5"/>
+      <rect x="208" y="196" width="96" height="14" rx="2" fill="#fff" stroke="#1b1b1b" stroke-width="2.5"/>
+      <rect x="130" y="120" width="40" height="42" rx="5" fill="#f26b1d" stroke="#1b1b1b" stroke-width="2.5"/>
+      <path d="M170 130c14 0 14 22 0 22" fill="none" stroke="#1b1b1b" stroke-width="2.5"/>
+      <path d="M142 108c-3-5 3-7 0-12M154 108c-3-5 3-7 0-12" fill="none" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round"/>
+      <path d="M0 214h330" stroke="#1b1b1b" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="about-text">
+    <h2 class="title">About Me</h2>
+    <p>
+      I'm a B.Tech Information Technology student (graduating 2027) from Serampore,
+      looking for my first developer role. Python and Django are where I'm strongest,
+      and I enjoy taking a project from database design to a clean screen people can use.
+    </p>
+    <ul class="traits">
+      <li><svg><use href="#i-bulb"/></svg>Problem Solver</li>
+      <li><svg><use href="#i-target"/></svg>Detail Oriented</li>
+      <li><svg><use href="#i-code"/></svg>Clean Code</li>
+      <li><svg><use href="#i-book"/></svg>Always Learning</li>
+      <li><svg><use href="#i-users"/></svg>Team Player</li>
+      <li><svg><use href="#i-clock"/></svg>Time Management</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="sec" id="skills">
+  <h2 class="title">Skills &amp; Technologies</h2>
+  <ul class="tiles">
+    <li><b>Py</b>Python</li>
+    <li><b>Dj</b>Django</li>
+    <li><b>Fa</b>FastAPI</li>
+    <li><b>{ }</b>REST API</li>
+    <li><b>Re</b>React</li>
+    <li><b>&lt;/&gt;</b>HTML5 / CSS3</li>
+    <li><b>Pd</b>Pandas</li>
+    <li><b>Sk</b>Scikit-learn</li>
+    <li><b>Db</b>MySQL / ORM</li>
+    <li><b>Gt</b>Git &amp; GitHub</li>
+    <li><b>Vs</b>VS Code</li>
+    <li><b>DSA</b>Data Structures &amp; Algorithms</li>
+    <li><b>Sd</b>System Design</li>
+    <li><b>MVC</b>MVC Pattern</li>
+  </ul>
+</section>
+
+<!-- WORK -->
+<section class="sec" id="work">
+  <div class="sec-head">
+    <h2 class="title">Selected Work</h2>
+    <a href="https://github.com/00dep" target="_blank" rel="noopener" class="more">View All Projects &rarr;</a>
+  </div>
+  <div class="cards">
+
+    <article class="card">
+      <div class="thumb t1">
+        <div class="mock"><i></i><i></i><i></i><div class="bars"><span></span><span></span><span></span></div></div>
+      </div>
+      <div class="card-body">
+        <h3>Purchase Prediction <a href="https://github.com/00dep" target="_blank" rel="noopener" aria-label="GitHub repo">&#8599;</a></h3>
+        <!-- TODO: replace the link above with your real ML repo link -->
+        <p>ML model that predicts if a visitor will buy, with about 90% test accuracy, running inside a Django app.</p>
+        <small>Python <b>&bull;</b> Scikit-learn <b>&bull;</b> Django</small>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb t2">
+        <div class="mock"><i></i><i></i><i></i><div class="grid"><span></span><span></span><span></span><span></span></div></div>
+      </div>
+      <div class="card-body">
+        <h3>GreatKart <a href="#" target="_blank" rel="noopener" aria-label="Live demo">&#8599;</a></h3>
+        <!-- TODO: replace # with your real live demo link -->
+        <p>Full shopping site with product catalog, persistent cart and checkout, built on 5+ Django models.</p>
+        <small>Django <b>&bull;</b> HTML <b>&bull;</b> CSS</small>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb t3">
+        <div class="mock phone"><i></i><div class="pin"></div><div class="row"></div><div class="row"></div></div>
+      </div>
+      <div class="card-body">
+        <h3>Local Scout <a href="https://github.com/00dep" target="_blank" rel="noopener" aria-label="GitHub">&#8599;</a></h3>
+        <p>Find nearby places by category and location. Django REST backend with a React front end.</p>
+        <small>Django REST <b>&bull;</b> React <b>&bull;</b> CSS</small>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="sec" id="education">
+  <h2 class="title">Education</h2>
+  <ol class="steps three">
+    <li>
+      <span class="ico"><svg><use href="#i-cap"/></svg></span>
+      <div><em>2024 &ndash; 2027</em><h3>B.Tech, Information Technology</h3><b>GCETT, Serampore</b>
+      <p>CGPA 6.4. Coursework: DSA, DBMS, Software Engineering, Web Technologies, OS, Networks.</p></div>
+    </li>
+    <li>
+      <span class="ico"><svg><use href="#i-laptop"/></svg></span>
+      <div><em>Projects</em><h3>3 Full-Stack Apps</h3><b>Self-driven</b>
+      <p>Built and shipped projects in Python, Django, REST and React.</p></div>
+    </li>
+    <li>
+      <span class="ico"><svg><use href="#i-flag"/></svg></span>
+      <div><em>2027</em><h3>Ready to Join a Team</h3><b>Open to junior roles</b>
+      <p>Looking for an entry-level Software Developer role in Python / Django.</p></div>
+    </li>
+  </ol>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="process">
+  <h2 class="title">My Process</h2>
+  <ol class="steps five">
+    <li><span class="ico"><svg><use href="#i-search"/></svg></span><em>01</em><h3>Discover</h3><p>Understand the problem deeply.</p></li>
+    <li><span class="ico"><svg><use href="#i-pen"/></svg></span><em>02</em><h3>Design</h3><p>Plan the data and the flow.</p></li>
+    <li><span class="ico"><svg><use href="#i-code"/></svg></span><em>03</em><h3>Develop</h3><p>Write clean code, build features.</p></li>
+    <li><span class="ico"><svg><use href="#i-rocket"/></svg></span><em>04</em><h3>Deploy</h3><p>Test thoroughly and launch.</p></li>
+    <li><span class="ico"><svg><use href="#i-chart"/></svg></span><em>05</em><h3>Improve</h3><p>Review, iterate and improve.</p></li>
+  </ol>
+</section>
+
+</main>
+
+<!-- CONTACT -->
+<footer class="contact" id="contact">
+  <div class="contact-in">
+    <h2>Let's build something meaningful <em>together.</em></h2>
+
+    <ul class="contact-list">
+      <li><svg><use href="#i-mail"/></svg><a href="mailto:deeproy.space@yahoo.com">deeproy.space@yahoo.com</a></li>
+      <li><svg><use href="#i-phone"/></svg><a href="tel:+919083835446">+91 90838 35446</a></li>
+      <li><svg><use href="#i-pin"/></svg>Serampore, West Bengal, India</li>
+    </ul>
+
+    <div class="connect">
+      <p>Let's Connect</p>
+      <div class="icons">
+        <a href="https://github.com/00dep" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-gh"/></svg></a>
+        <a href="https://www.linkedin.com/in/deep-roy-0b0393370/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/roy__deep" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        <a href="https://www.facebook.com/share/1DEcw7fjoX/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="mailto:deeproy.space@yahoo.com" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <p class="copy">&copy; 2026 Deep Roy. All rights reserved.</p>
+</footer>
+
+<script>
+  const btn = document.getElementById('menuBtn'), nav = document.getElementById('nav');
+  btn.addEventListener('click', () => {
+    const o = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', o);
+  });
+  const links = [...nav.querySelectorAll('a:not(.nav-cta)')];
+  links.forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  const secs = links.map(a => document.querySelector(a.getAttribute('href')));
+  addEventListener('scroll', () => {
+    let cur = 0;
+    secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < 140) cur = i; });
+    links.forEach((a, i) => a.classList.toggle('active', i === cur));
+  }, { passive: true });
+</script>
+</body>
+</html>
