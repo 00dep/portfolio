@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 from pathlib import Path
 import os
 from django.core.exceptions import ImproperlyConfigured
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,24 +22,30 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
-# Keep production secrets and hostnames in the PythonAnywhere WSGI config.
-DEBUG = os.environ.get('DJANGO_DEBUG', 'True').strip().lower() in {'true', '1', 'yes'}
+# Keep production secrets and hostnames in the hosting provider's environment.
+DEBUG = os.environ.get(
+    'DJANGO_DEBUG',
+    'False' if os.environ.get('VERCEL') else 'True',
+).strip().lower() in {'true', '1', 'yes'}
 SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY',
     'django-insecure-local-development-only-key',
 )
-if not DEBUG and (not SECRET_KEY or SECRET_KEY == 'django-insecure-local-development-only-key'):
+if not DEBUG and (
+    not SECRET_KEY
+    or SECRET_KEY == 'django-insecure-local-development-only-key'
+):
     raise ImproperlyConfigured('Set DJANGO_SECRET_KEY in the production environment.')
 
-default_hosts = 'localhost,127.0.0.1,.pythonanywhere.com'
+default_hosts = 'localhost,127.0.0.1,.pythonanywhere.com,.vercel.app'
 ALLOWED_HOSTS = [
     host.strip()
     for host in os.environ.get('DJANGO_ALLOWED_HOSTS', default_hosts).split(',')
     if host.strip()
 ]
-
-if 'pythonanywhere.com' not in ALLOWED_HOSTS and '.pythonanywhere.com' not in ALLOWED_HOSTS:
-    ALLOWED_HOSTS.append('.pythonanywhere.com')
+for platform_host in ('.pythonanywhere.com', '.vercel.app'):
+    if platform_host not in ALLOWED_HOSTS:
+        ALLOWED_HOSTS.append(platform_host)
 # Application definition
 
 INSTALLED_APPS = [
@@ -80,16 +87,32 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
+if not DEBUG:
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+DATABASE_URL = os.environ.get('DATABASE_URL')
+if DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.parse(
+            DATABASE_URL,
+            conn_max_age=0,
+            ssl_require=not DEBUG,
+        )
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 # Password validation
